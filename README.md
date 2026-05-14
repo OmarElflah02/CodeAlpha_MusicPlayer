@@ -171,4 +171,4 @@ Modify media queries in `style.css`:
 
 ## 🌐 Live Demo
 
-  
+https://omarelflah02.github.io/CodeAlpha_MusicPlayer/  
