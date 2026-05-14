@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Music Player</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<!-- Main Player Section -->
+			<main class="player">
+				<!-- Album Cover Section -->
+				<section class="album-section">
+					<div class="album-cover-wrapper">
+						<img id="albumCover" class="album-cover" src="assets/images/placeholder.svg" alt="Album Cover" />
+						<div class="play-overlay"></div>
+					</div>
+				</section>
+
+				<!-- Song Info Section -->
+				<section class="song-info">
+					<h2 id="songTitle" class="song-title">Select a song</h2>
+					<p id="artistName" class="artist-name">Artist Name</p>
+				</section>
+
+				<!-- Progress Bar Section -->
+				<section class="progress-section">
+					<div class="time-display">
+						<span id="currentTime" class="time">0:00</span>
+						<span class="time-separator">/</span>
+						<span id="duration" class="time">0:00</span>
+					</div>
+					<div class="progress-bar-container">
+						<input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0" aria-label="Song progress" />
+					</div>
+				</section>
+
+				<!-- Control Buttons Section -->
+				<section class="controls">
+					<!-- Previous Button -->
+					<button id="prevBtn" class="control-btn prev-btn" aria-label="Previous song">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polygon points="19 20 9 12 19 4 19 20"></polygon>
+							<line x1="5" y1="4" x2="5" y2="20"></line>
+						</svg>
+					</button>
+
+					<!-- Play/Pause Button -->
+					<button id="playBtn" class="control-btn play-btn" aria-label="Play">
+						<svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+							<polygon points="5 3 19 12 5 21 5 3"></polygon>
+						</svg>
+						<svg class="pause-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+							<rect x="6" y="4" width="4" height="16"></rect>
+							<rect x="14" y="4" width="4" height="16"></rect>
+						</svg>
+					</button>
+
+					<!-- Next Button -->
+					<button id="nextBtn" class="control-btn next-btn" aria-label="Next song">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<polygon points="5 4 15 12 5 20 5 4"></polygon>
+							<line x1="19" y1="4" x2="19" y2="20"></line>
+						</svg>
+					</button>
+				</section>
+
+				<!-- Volume Section -->
+				<section class="volume-section">
+					<svg class="volume-icon" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+						></path>
+					</svg>
+					<input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70" aria-label="Volume" />
+					<span id="volumeValue" class="volume-value">70%</span>
+				</section>
+
+				<!-- Autoplay Toggle -->
+				<section class="autoplay-section">
+					<label class="autoplay-toggle">
+						<input type="checkbox" id="autoplayToggle" checked />
+						<span class="toggle-label">Autoplay</span>
+					</label>
+				</section>
+
+				<!-- Hidden Audio Element -->
+				<audio id="audioPlayer" crossorigin="anonymous"></audio>
+			</main>
+
+			<!-- Playlist Section -->
+			<aside class="playlist-section">
+				<div class="playlist-header">
+					<h3>Playlist</h3>
+					<span class="song-count" id="songCount">0 songs</span>
+				</div>
+				<ul id="playlistContainer" class="playlist-container">
+					<!-- Playlist items will be added by JavaScript -->
+				</ul>
+			</aside>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>
